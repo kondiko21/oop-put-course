@@ -77,7 +77,6 @@ public class Ex3Java {
         Title firstTitle = new Title("Wiedzmin", 3);
         Game firstGame = new Game(firstTitle, firstType, firstStudio, "2015");
         
-        System.out.println(firstGame.title.fullTitle());
         firstGame.printShopInformation();
     }
 }
