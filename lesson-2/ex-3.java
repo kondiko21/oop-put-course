@@ -58,7 +58,7 @@ final class Game {
         this(title, type, studio, Integer.parseInt(releaseYear));      
     }
     
-    void printShopInformation() {
+    void printInformation() {
         System.out.println("Title:"+title.fullTitle()+"\nType: "+type.genreName()+"\nPEGI: "+type.requiredAge());
     }
     
@@ -72,6 +72,6 @@ public class Ex3Java {
         Title firstTitle = new Title("Wiedzmin", 3);
         Game firstGame = new Game(firstTitle, firstType, firstStudio, "2015");
         
-        firstGame.printShopInformation();
+        firstGame.printInformation();
     }
 }
