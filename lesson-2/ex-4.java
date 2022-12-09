@@ -1,4 +1,4 @@
-package com.mycompany.ex.java;
+package ex4;
 
 interface Vehicle {
     Vehicle changeSpeed(int value);
@@ -20,17 +20,17 @@ class Truck implements Vehicle {
     }
     
     @Override
-    public Vehicle changeSpeed(int value) {
-        return new Truck(brand, value, capacity, fuelTankCapacity );
+    public Truck changeSpeed(int value) {
+        return new Truck(this.brand, value, this.capacity, this.fuelTankCapacity );
     }
     
     @Override
-    public Vehicle fillFuel(int value) {
+    public Truck fillFuel(int value) {
         return new Truck(brand, speed, capacity, fuelTankCapacity+value );
     }
     
     void printSpeed() {
-        System.out.printf("Vehicle is moving with speed: "+speed);
+        System.out.printf("Vehicle is moving with speed: "+speed+"\n");
     }
 }
 
@@ -69,8 +69,8 @@ public class Ex4Java {
     public static void main(String[] args) {
         Truck truck = new Truck("Man", 0,10,30);
         truck.printSpeed();
-        Truck runningTruck = truck.changeSpeed(80); //com/mycompany/ex/java/Ex4Java.java:[77,47] incompatible types: com.mycompany.ex.java.Vehicle cannot be converted to com.mycompany.ex.java.Truck
-        truck.printSpeed();
+        Truck runningTruck = truck.changeSpeed(80);
+        runningTruck.printSpeed();
         
         Boat boat = new Boat("Ford", 10,1,30);
         Boat transportingBoat = boat.addPassenger();
